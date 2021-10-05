@@ -3,6 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AsignaturaController;
+use App\Http\Controllers\EstudioController;
+use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\ProfesorAsignaturaController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::ApiResource('/asignatura', AsignaturaController::class);
+Route::ApiResource('/estudio', EstudioController::class);
+Route::ApiResource('/profesor', ProfesorController::class);
+Route::ApiResource('/profesor-asignatura', ProfesorAsignaturaController::class);
