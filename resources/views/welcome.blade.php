@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Nebrija</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,57 +18,42 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+
+            img {
+                width: 40%;
+            }
         </style>
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
+            <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+                    <img src="data:image/png;base64,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" alt="" srcset="" >
                 </div>
-
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
                             <div class="flex items-center">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
+                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="http://127.0.0.1:8000/api/estudio" class="underline text-gray-900 dark:text-white">Estudio</a></div>
                             </div>
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+                                    Chequea nuestra consulta de estudios
                                 </div>
                             </div>
                         </div>
 
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
                             <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="http://127.0.0.1:8000/api/profesor" class="underline text-gray-900 dark:text-white">Profesor</a></div>
                             </div>
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                                Chequea nuestra consulta de profesores
                                 </div>
                             </div>
                         </div>
@@ -76,12 +61,12 @@
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700">
                             <div class="flex items-center">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
+                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="http://127.0.0.1:8000/api/asignatura" class="underline text-gray-900 dark:text-white">Asignatura</a></div>
                             </div>
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
+                                Chequea nuestra consulta de asignatura
                                 </div>
                             </div>
                         </div>
@@ -89,12 +74,12 @@
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
                             <div class="flex items-center">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
+                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="http://127.0.0.1:8000/api/profesor-asignatura" class="underline text-gray-900 dark:text-white">Profesor Asignatura</a></div>
                             </div>
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
+                                Chequea nuestra consulta de profesor asignatura
                                 </div>
                             </div>
                         </div>
@@ -102,28 +87,8 @@
                 </div>
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                        Autor: José Vázquez
                     </div>
                 </div>
             </div>
