@@ -8,4 +8,6 @@
 
 * Descargar o Clonar proyecto
 
+* Agregar archivo .env copiar de .env.example 
+
 * Ejecutar servidor con php artisan serve
